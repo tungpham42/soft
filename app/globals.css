@@ -1,0 +1,44 @@
+/* globals.css */
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --background: #fdfbf7; /* Warm Paper White */
+  --foreground: #2d3436;
+  --primary: #00b96b;
+  --card-bg: #ffffff;
+  --radius: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a1c1e;
+    --foreground: #f0f0f0;
+    --card-bg: #242729;
+  }
+}
+
+body {
+  font-family: "Lexend Deca", sans-serif !important;
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background 0.3s ease;
+}
+
+/* Make Ant Design use our font */
+.ant-typography,
+.ant-btn,
+.ant-card {
+  font-family: "Lexend Deca", sans-serif !important;
+}
+
+/* Smooth hover transitions */
+.ant-card {
+  border: none !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.ant-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08) !important;
+}
