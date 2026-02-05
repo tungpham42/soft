@@ -1,8 +1,10 @@
 // layout.tsx
 import type { Metadata } from "next";
+import Script from "next/script";
 import StyledComponentsRegistry from "@/lib/AntdRegistry";
 import { ConfigProvider } from "antd";
 import BackToTop from "@/components/BackToTop";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,6 +19,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="vi">
+      <head>
+        <Script
+          id="adsense-script"
+          async
+          strategy="afterInteractive"
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3585118770961536`}
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>
         <StyledComponentsRegistry>
           <ConfigProvider
@@ -32,6 +43,7 @@ export default function RootLayout({
             <main style={{ minHeight: "100vh" }}>{children}</main>
             <BackToTop />
           </ConfigProvider>
+          <GoogleAnalytics ga_id="G-HHXZSNQ65X" />
         </StyledComponentsRegistry>
       </body>
     </html>
